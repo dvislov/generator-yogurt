@@ -1,12 +1,12 @@
 {
-  "name": "generator-yougurt",
+  "name": "generator-yogurt",
   "version": "0.0.0",
   "description": "A generator for Yeoman",
   "keywords": [
     "yeoman-generator"
   ],
-  "homepage": "https://github.com/vdv73rus/generator-yougurt",
-  "bugs": "https://github.com/vdv73rus/generator-yougurt/issues",
+  "homepage": "https://github.com/vdv73rus/generator-yogurt",
+  "bugs": "https://github.com/vdv73rus/generator-yogurt/issues",
   "author": {
     "name": "Dmitry Vislov",
     "email": "vdv73rus@gmail.com",
@@ -15,7 +15,7 @@
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/vdv73rus/generator-yougurt.git"
+    "url": "git://github.com/vdv73rus/generator-yogurt.git"
   },
   "scripts": {
     "test": "mocha"

@@ -1,4 +1,4 @@
-# generator-yougurt [![Build Status](https://secure.travis-ci.org/vdv73rus/generator-yougurt.png?branch=master)](https://travis-ci.org/vdv73rus/generator-yougurt)
+# generator-yogurt [![Build Status](https://secure.travis-ci.org/vdv73rus/generator-yogurt.png?branch=master)](https://travis-ci.org/vdv73rus/generator-yogurt)
 
 A generator for [Yeoman](http://yeoman.io).
 
@@ -23,16 +23,16 @@ $ npm install -g yo
 
 Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
 
-To install generator-yougurt from npm, run:
+To install generator-yogurt from npm, run:
 
 ```
-$ npm install -g generator-yougurt
+$ npm install -g generator-yogurt
 ```
 
 Finally, initiate the generator:
 
 ```
-$ yo yougurt
+$ yo yogurt
 ```
 
 ### Getting To Know Yeoman

@@ -4,7 +4,7 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 
 
-var YougurtGenerator = module.exports = function YougurtGenerator(args, options, config) {
+var YogurtGenerator = module.exports = function YogurtGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
   this.on('end', function () {
@@ -14,9 +14,9 @@ var YougurtGenerator = module.exports = function YougurtGenerator(args, options,
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
 };
 
-util.inherits(YougurtGenerator, yeoman.generators.Base);
+util.inherits(YogurtGenerator, yeoman.generators.Base);
 
-YougurtGenerator.prototype.askFor = function askFor() {
+YogurtGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
   // have Yeoman greet the user.
@@ -36,7 +36,7 @@ YougurtGenerator.prototype.askFor = function askFor() {
   }.bind(this));
 };
 
-YougurtGenerator.prototype.app = function app() {
+YogurtGenerator.prototype.app = function app() {
   this.mkdir('app');
   this.mkdir('app/templates');
 
@@ -44,7 +44,7 @@ YougurtGenerator.prototype.app = function app() {
   this.copy('_bower.json', 'bower.json');
 };
 
-YougurtGenerator.prototype.projectfiles = function projectfiles() {
+YogurtGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('editorconfig', '.editorconfig');
   this.copy('jshintrc', '.jshintrc');
 };
