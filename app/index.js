@@ -38,7 +38,15 @@ YogurtGenerator.prototype.askFor = function askFor() {
 
 YogurtGenerator.prototype.app = function app() {
   this.mkdir('app');
-  this.mkdir('app/templates');
+
+  // Jade templates
+  this.mkdir('app/jade');
+  this.mkdir('app/jade/_shared');
+
+  this.copy('jade/index.jade', 'app/jade/index.jade');
+  this.copy('jade/catalog.jade', 'app/jade/catalog.jade');
+  this.copy('jade/_shared/_first.jade', 'app/jade/_shared/_first.jade');
+  this.copy('jade/_shared/_second.jade', 'app/jade/_shared/_second.jade');
 
   this.copy('_package.json', 'package.json');
   this.copy('_bower.json', 'bower.json');
