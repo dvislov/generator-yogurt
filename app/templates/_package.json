@@ -1,5 +1,12 @@
 {
   "name": "package",
-  "version": "0.0.0",
-  "dependencies": {}
+  "version": "0.0.1",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jade": "~0.8.0",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "connect-livereload": "~0.3.0"
+  }
 }

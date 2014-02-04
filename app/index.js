@@ -48,7 +48,11 @@ YogurtGenerator.prototype.app = function app() {
   this.copy('jade/_shared/_first.jade', 'app/jade/_shared/_first.jade');
   this.copy('jade/_shared/_second.jade', 'app/jade/_shared/_second.jade');
 
+  // Compile folders
+  this.mkdir('app/compile/');
+
   this.copy('_package.json', 'package.json');
+  this.copy('_Gruntfile.coffee', 'Gruntfile.coffee');
   this.copy('_bower.json', 'bower.json');
 };
 
