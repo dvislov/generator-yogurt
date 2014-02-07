@@ -34,6 +34,11 @@ module.exports = (grunt) ->
           ext: ".html"
         ]
 
+    sass:
+      dist:
+        files:
+          "app/compile/css/application.css": "app/sass/application.sass"
+
     watch:
       options:
         livereload: true
@@ -42,9 +47,14 @@ module.exports = (grunt) ->
         files: ["jade/*.jade"]
         tasks: ["jade"]
 
+      css:
+        files: "sass/*.sass"
+        tasks: ["sass"]
+
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-connect"
   grunt.loadNpmTasks "grunt-contrib-jade"
+  grunt.loadNpmTasks "grunt-contrib-sass"
 
   grunt.registerTask "server", "connect"
   grunt.registerTask "default", "watch"

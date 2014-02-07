@@ -11,7 +11,7 @@ var YogurtGenerator = module.exports = function YogurtGenerator(args, options, c
     this.installDependencies({
       skipInstall: options['skip-install'],
       callback: function () {
-        this.spawnCommand('grunt', ['jade']);
+        this.spawnCommand('grunt', ['jade', 'sass']);
       }.bind(this)
     });
   });
@@ -46,6 +46,9 @@ YogurtGenerator.prototype.app = function app() {
 
   // Jade templates
   this.directory('jade', 'app/jade', true);
+
+  // SASS
+  this.directory('sass', 'app/sass', true);
 
   // Compile folders
   this.mkdir('app/compile/');
