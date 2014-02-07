@@ -40,13 +40,7 @@ YogurtGenerator.prototype.app = function app() {
   this.mkdir('app');
 
   // Jade templates
-  this.mkdir('app/jade');
-  this.mkdir('app/jade/_shared');
-
-  this.copy('jade/index.jade', 'app/jade/index.jade');
-  this.copy('jade/catalog.jade', 'app/jade/catalog.jade');
-  this.copy('jade/_shared/_header.jade', 'app/jade/_shared/_header.jade');
-  this.copy('jade/_shared/_footer.jade', 'app/jade/_shared/_footer.jade');
+  this.directory('jade', 'app/jade', true);
 
   // Compile folders
   this.mkdir('app/compile/');
