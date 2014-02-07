@@ -8,7 +8,12 @@ var YogurtGenerator = module.exports = function YogurtGenerator(args, options, c
   yeoman.generators.Base.apply(this, arguments);
 
   this.on('end', function () {
-    this.installDependencies({ skipInstall: options['skip-install'] });
+    this.installDependencies({
+      skipInstall: options['skip-install'],
+      callback: function () {
+        this.spawnCommand('grunt', ['jade']);
+      }.bind(this)
+    });
   });
 
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
