@@ -28,14 +28,24 @@ YogurtGenerator.prototype.askFor = function askFor() {
   console.log(this.yeoman);
 
   var prompts = [{
-    type: 'confirm',
-    name: 'someOption',
-    message: 'Would you like to enable this option?',
-    default: true
+    type: 'list',
+    name: 'cssreset',
+    message: 'Which CSS reset you want to use?',
+    choices: [
+      {
+        name: 'Eric Meyer reset CSS 2.0',
+        value: 'meyer'
+      },
+      {
+        name: 'Normalize CSS',
+        value: 'normalize'
+      }
+    ],
+    default: 0
   }];
 
   this.prompt(prompts, function (props) {
-    this.someOption = props.someOption;
+    this.cssreset = props.cssreset;
 
     cb();
   }.bind(this));
