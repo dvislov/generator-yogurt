@@ -57,6 +57,9 @@ YogurtGenerator.prototype.app = function app() {
   // Jade templates
   this.directory('jade', 'app/jade', true);
 
+  // Yeoman jade templating
+  this.template('jade/_shared/_header.jade', 'app/jade/_shared/_header.jade');
+
   // SASS
   this.directory('sass', 'app/sass', true);
 

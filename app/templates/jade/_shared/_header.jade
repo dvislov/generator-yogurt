@@ -2,5 +2,8 @@
 html
   head
     title Grunt car engine
+    <% if (cssreset == 'meyer') { %>
+    link(type='text/css', rel='stylesheet', href='css/reset.css')
+    <% } %>
     link(type='text/css', rel='stylesheet', href='css/application.css')
   body
