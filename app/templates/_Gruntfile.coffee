@@ -39,6 +39,13 @@ module.exports = (grunt) ->
         files:
           "app/compile/css/application.css": "app/sass/application.sass"
 
+    copy:
+      bower:<% if (cssreset == 'normalize') { %>
+        src: 'bower_components/normalize-css/normalize.css'
+        dest: 'app/compile/css/normalize.css'<% } %><% if (cssreset == 'meyer') { %>
+        src: 'bower_components/reset-css/reset.css'
+        dest: 'app/compile/css/reset.css'<% } %>
+
     watch:
       options:
         livereload: true
@@ -55,6 +62,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-connect"
   grunt.loadNpmTasks "grunt-contrib-jade"
   grunt.loadNpmTasks "grunt-contrib-sass"
+  grunt.loadNpmTasks "grunt-contrib-copy"
 
   grunt.registerTask "server", "connect"
   grunt.registerTask "default", "watch"
