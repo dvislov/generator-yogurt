@@ -11,7 +11,7 @@ var YogurtGenerator = module.exports = function YogurtGenerator(args, options, c
     this.installDependencies({
       skipInstall: options['skip-install'],
       callback: function () {
-        this.spawnCommand('grunt', ['jade', 'sass', 'copy:bower']);
+        this.spawnCommand('grunt', ['jade', 'sass', 'autoprefixer','copy:bower']);
       }.bind(this)
     });
   });
