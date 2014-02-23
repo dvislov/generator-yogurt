@@ -50,6 +50,8 @@ $ grunt watch
 
 And open http://127.0.0.1:9001 at your browser!
 
+Then, if you change any of your jade template or sass stylesheet, your browser woulbe reloaded automatically! Open your work on many devices/creens and enjoy!
+
 ## License
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
