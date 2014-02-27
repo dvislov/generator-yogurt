@@ -42,10 +42,22 @@ YogurtGenerator.prototype.askFor = function askFor() {
       }
     ],
     default: 0
+  },{
+    type: 'checkbox',
+    name: 'features',
+    message: 'Change awesome features for your build',
+    choices: [{
+      name: 'jQuery',
+      value: 'jquery'
+    }]
   }];
 
   this.prompt(prompts, function (props) {
+
+    function hasFeature(feat) { return props.features.indexOf(feat) !== -1; }
+
     this.cssreset = props.cssreset;
+    this.jquery = hasFeature('jquery');
 
     cb();
   }.bind(this));
@@ -65,6 +77,7 @@ YogurtGenerator.prototype.app = function app() {
 
   // Compile folders
   this.mkdir('app/compile/');
+  this.mkdir('app/compile/js/');
 
   this.copy('_package.json', 'package.json');
   this.copy('_Gruntfile.coffee', 'Gruntfile.coffee');

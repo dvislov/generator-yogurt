@@ -1,9 +1,10 @@
 {
   "name": "package",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "dependencies": {
-    <% if (cssreset == 'meyer') { %>"reset-css": "~2.0.20110126"<% } %>
-    <% if (cssreset == 'normalize') { %>"normalize-css": "~3.0.0"<% } %>
+    <% if (cssreset == 'meyer') { %>"reset-css": "~2.0.20110126"<% if (jquery) { %>,<% } %><% } %>
+    <% if (cssreset == 'normalize') { %>"normalize-css": "~3.0.0"<% if (jquery) { %>,<% } %><% } %>
+    <% if (jquery) { %>"jquery": "~2.1.0"<% } %>
   }
 }
 

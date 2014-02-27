@@ -48,11 +48,26 @@ module.exports = (grunt) ->
         dest: "app/compile/css/application.css"
 
     copy:
-      bower:<% if (cssreset == 'normalize') { %>
-        src: 'bower_components/normalize-css/normalize.css'
-        dest: 'app/compile/css/normalize.css'<% } %><% if (cssreset == 'meyer') { %>
-        src: 'bower_components/reset-css/reset.css'
-        dest: 'app/compile/css/reset.css'<% } %>
+      bower:
+        files:[<% if (cssreset == 'normalize') { %>
+          {
+            src: 'bower_components/normalize-css/normalize.css'
+            dest: 'app/compile/css/normalize.css'
+          }
+          <% } %>
+          <% if (cssreset == 'meyer') { %>
+          {
+            src: 'bower_components/reset-css/reset.css'
+            dest: 'app/compile/css/reset.css'
+          }
+          <% } %>
+          <% if (jquery) { %>
+          {
+            src: 'bower_components/jquery/dist/jquery.min.js'
+            dest: 'app/compile/js/jquery.min.js'
+          }
+          <% } %>
+        ]
 
     watch:
       options:
