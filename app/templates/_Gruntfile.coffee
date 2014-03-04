@@ -47,27 +47,20 @@ module.exports = (grunt) ->
         src: "app/compile/css/application.css"
         dest: "app/compile/css/application.css"
 
-    copy:
-      bower:
-        files:[<% if (cssreset == 'normalize') { %>
-          {
-            src: 'bower_components/normalize-css/normalize.css'
-            dest: 'app/compile/css/normalize.css'
-          }
-          <% } %>
-          <% if (cssreset == 'meyer') { %>
-          {
-            src: 'bower_components/reset-css/reset.css'
-            dest: 'app/compile/css/reset.css'
-          }
-          <% } %>
-          <% if (jquery) { %>
-          {
-            src: 'bower_components/jquery/dist/jquery.min.js'
-            dest: 'app/compile/js/jquery.min.js'
-          }
-          <% } %>
-        ]
+    bowercopy:
+      options:
+        runBower: false
+      css:
+        options:
+          destPrefix: "app/compile/css"
+        files:
+          <% if (cssreset == 'normalize') { %>'normalize.css': 'normalize-css/normalize.css'<% } %>
+          <% if (cssreset == 'meyer') { %>'reset.css': 'reset-css/reset.css'<% } %>
+      js:
+        options:
+          destPrefix: "app/compile/js"
+        files:
+          <% if (jquery) { %>'jquery.min.js': 'jquery/dist/jquery.min.js'<% } %>
 
     watch:
       options:
@@ -85,7 +78,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-connect"
   grunt.loadNpmTasks "grunt-contrib-jade"
   grunt.loadNpmTasks "grunt-contrib-sass"
-  grunt.loadNpmTasks "grunt-contrib-copy"
+  grunt.loadNpmTasks "grunt-bowercopy"
   grunt.loadNpmTasks "grunt-autoprefixer"
 
   grunt.registerTask "server", "connect"
