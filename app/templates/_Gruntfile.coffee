@@ -62,6 +62,14 @@ module.exports = (grunt) ->
         files:
           <% if (jquery) { %>'jquery.min.js': 'jquery/dist/jquery.min.js'<% } %>
 
+    <% if (datauri) { %>datauri:
+      default:
+        options:
+          classPrefix: "data-"
+        src: ["app/compile/img/base64icons/*"]
+        dest: ["app/sass/base64.sass"]
+    <% } %>
+
     watch:
       options:
         livereload: true
@@ -80,6 +88,8 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-sass"
   grunt.loadNpmTasks "grunt-bowercopy"
   grunt.loadNpmTasks "grunt-autoprefixer"
+
+  <% if (datauri) { %>grunt.loadNpmTasks "grunt-datauri"<% } %>
 
   grunt.registerTask "server", "connect"
   grunt.registerTask "default", "watch"

@@ -1,0 +1,17 @@
+body
+  background-color: #ccc
+
+h1
+  transition: 0.5s all ease
+
+@import 'partial'
+
+<% if (datauri) { %>
+@import 'base64'
+
+.icon-geo
+  @extend %data-icon_geo
+  width: 11px
+  height: 8px
+  font-size: 0
+<% } %>

@@ -11,7 +11,18 @@ var YogurtGenerator = module.exports = function YogurtGenerator(args, options, c
     this.installDependencies({
       skipInstall: options['skip-install'],
       callback: function () {
-        this.spawnCommand('grunt', ['jade', 'sass', 'autoprefixer','bowercopy']);
+        var grunt_post_tasks = [];
+
+        if (this.datauri) {
+          grunt_post_tasks.push('datauri');
+        }
+
+        grunt_post_tasks.push('jade');
+        grunt_post_tasks.push('sass');
+        grunt_post_tasks.push('autoprefixer');
+        grunt_post_tasks.push('bowercopy');
+
+        this.spawnCommand('grunt', grunt_post_tasks);
       }.bind(this)
     });
   });
@@ -49,7 +60,11 @@ YogurtGenerator.prototype.askFor = function askFor() {
     choices: [{
       name: 'jQuery',
       value: 'jquery'
-    }]
+    },{
+      name: 'SASS Data URI',
+      value: 'datauri'
+    }
+    ]
   }];
 
   this.prompt(prompts, function (props) {
@@ -58,6 +73,7 @@ YogurtGenerator.prototype.askFor = function askFor() {
 
     this.cssreset = props.cssreset;
     this.jquery = hasFeature('jquery');
+    this.datauri = hasFeature('datauri');
 
     cb();
   }.bind(this));
@@ -73,11 +89,17 @@ YogurtGenerator.prototype.app = function app() {
   this.template('jade/_shared/_header.jade', 'app/jade/_shared/_header.jade');
 
   // SASS
-  this.directory('sass', 'app/sass', true);
+  this.copy('sass/_partial.sass', 'app/sass/_partial.sass');
+  this.template('sass/_application.sass', 'app/sass/application.sass');
 
   // Compile folders
   this.mkdir('app/compile/');
   this.mkdir('app/compile/js/');
+  this.mkdir('app/compile/img/');
+
+  if (this.datauri) {
+    this.directory('img/base64icons', 'app/compile/img/base64icons', true);
+  }
 
   this.copy('_package.json', 'package.json');
   this.copy('_Gruntfile.coffee', 'Gruntfile.coffee');
