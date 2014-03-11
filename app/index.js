@@ -75,6 +75,9 @@ YogurtGenerator.prototype.askFor = function askFor() {
     this.jquery = hasFeature('jquery');
     this.datauri = hasFeature('datauri');
 
+    this.needJs = false;
+    if (this.jquery) {this.needJs = true;};
+
     cb();
   }.bind(this));
 };

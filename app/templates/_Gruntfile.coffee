@@ -56,11 +56,13 @@ module.exports = (grunt) ->
         files:
           <% if (cssreset == 'normalize') { %>'normalize.css': 'normalize-css/normalize.css'<% } %>
           <% if (cssreset == 'meyer') { %>'reset.css': 'reset-css/reset.css'<% } %>
+      <% if (needJs) { %>
       js:
         options:
           destPrefix: "app/compile/js"
         files:
           <% if (jquery) { %>'jquery.min.js': 'jquery/dist/jquery.min.js'<% } %>
+      <% } %>
 
     <% if (datauri) { %>datauri:
       default:
