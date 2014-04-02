@@ -50,7 +50,7 @@ $ grunt watch
 
 And open http://127.0.0.1:9001 at your browser!
 
-Then, if you change any of your jade template or sass stylesheet, your browser woulbe reloaded automatically! Open your work on many devices/creens and enjoy!
+Then, if you change any of your jade template or sass stylesheet, your browser would be reloaded automatically! Open your work on many devices/screens and enjoy!
 
 ## What's inside?
 * Jade (with partials)
