@@ -52,6 +52,15 @@ And open http://127.0.0.1:9001 at your browser!
 
 Then, if you change any of your jade template or sass stylesheet, your browser woulbe reloaded automatically! Open your work on many devices/creens and enjoy!
 
+## What's inside?
+* Jade (with partials)
+* SASS
+
+### Optionally
+* Normalize.css or Eric Meyer reset.css
+* Jquery
+* SASS Data URI (base64 images generator)
+
 ## License
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
