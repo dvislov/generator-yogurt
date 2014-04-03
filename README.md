@@ -61,6 +61,9 @@ Then, if you change any of your jade template or sass stylesheet, your browser w
 * Jquery
 * SASS Data URI (base64 images generator)
 
+## Version history
+* **0.0.1** - first release
+
 ## License
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
