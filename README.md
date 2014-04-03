@@ -60,6 +60,7 @@ Then, if you change any of your jade template or sass stylesheet, your browser w
 * Normalize.css or Eric Meyer reset.css
 * Jquery
 * SASS Data URI (base64 images generator)
+* Russian rouble symbol font
 
 ## Version history
 * **0.0.2** - Russian rouble sign support added.
