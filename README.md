@@ -62,7 +62,8 @@ Then, if you change any of your jade template or sass stylesheet, your browser w
 * SASS Data URI (base64 images generator)
 
 ## Version history
-* **0.0.1** - first release
+* **0.0.2** - Russian rouble sign support added.
+* **0.0.1** - first release.
 
 ## License
 

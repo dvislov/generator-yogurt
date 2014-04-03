@@ -63,6 +63,9 @@ YogurtGenerator.prototype.askFor = function askFor() {
     },{
       name: 'SASS Data URI',
       value: 'datauri'
+    },{
+      name: 'Ruble sign font',
+      value: 'rublefont'
     }
     ]
   }];
@@ -74,6 +77,7 @@ YogurtGenerator.prototype.askFor = function askFor() {
     this.cssreset = props.cssreset;
     this.jquery = hasFeature('jquery');
     this.datauri = hasFeature('datauri');
+    this.rublefont = hasFeature('rublefont');
 
     this.needJs = false;
     if (this.jquery) {this.needJs = true;};
@@ -99,9 +103,14 @@ YogurtGenerator.prototype.app = function app() {
   this.mkdir('app/compile/');
   this.mkdir('app/compile/js/');
   this.mkdir('app/compile/img/');
+  this.mkdir('app/compile/fonts/');
 
   if (this.datauri) {
     this.directory('img/base64icons', 'app/compile/img/base64icons', true);
+  }
+
+  if (this.rublefont) {
+    this.directory('fonts', 'app/compile/fonts', true);
   }
 
   this.copy('_package.json', 'package.json');

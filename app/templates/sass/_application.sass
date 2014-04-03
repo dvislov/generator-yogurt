@@ -1,6 +1,13 @@
 body
   background-color: #ccc
 
+b,
+strong
+  font-weight: bold
+i,
+pre
+  font-style: italic
+
 h1
   transition: 0.5s all ease
 
@@ -14,4 +21,31 @@ h1
   width: 11px
   height: 8px
   font-size: 0
+<% } %>
+
+<% if (rublefont) { %>
+// Ruble font
+@font-face
+  font-family: 'ALSRubl-Arial'
+  src: url("../fonts/alsrubl-arial-regular.woff") format("woff")
+
+@font-face
+  font-family: 'ALSRubl-Arial'
+  font-style: italic
+  src: url("../fonts/alsrubl-arial-italic.woff") format("woff")
+
+@font-face
+  font-family: 'ALSRubl-Arial'
+  font-weight: bold
+  src: url("../fonts/alsrubl-arial-bold.woff") format("woff")
+
+@font-face
+  font-family: 'ALSRubl-Arial'
+  font-style: italic
+  font-weight: bold
+  src: url("../fonts/alsrubl-arial-bolditalic.woff") format("woff")
+
+.ruble
+  font-family: ALSRubl-Arial
+  line-height: 1
 <% } %>
