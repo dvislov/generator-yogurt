@@ -62,9 +62,9 @@ Then, if you change any of your jade template or sass stylesheet, your browser w
 * SASS Data URI (base64 images generator)
 * Russian rouble symbol font
 
-## Version history
-* **0.0.2** - Russian rouble sign support added.
-* **0.0.1** - first release.
+## Release history
+* 2014 - 04 - 03 **0.0.2** - Russian rouble sign support added.
+* 2014 - 04 - 02 **0.0.1** - first release.
 
 ## License
 
