@@ -82,7 +82,7 @@ module.exports = (grunt) ->
           pngquant: true
           cwd: 'app/compile/img'
           src: ['**/*.{png,jpg,gif}']
-          dest: 'app/compile/img'
+          dest: 'app/compile/img/minified'
         ]
     <% } %>
 
