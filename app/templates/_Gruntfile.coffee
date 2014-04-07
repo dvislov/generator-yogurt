@@ -72,6 +72,20 @@ module.exports = (grunt) ->
         dest: ["app/sass/base64.sass"]
     <% } %>
 
+    <% if (grunt_imagemin) { %>imagemin:
+      dynamic:
+        files: [
+          expand: true
+          progressive: true
+          interlaced: true
+          optimizationLevel: 3
+          pngquant: true
+          cwd: 'app/compile/img'
+          src: ['**/*.{png,jpg,gif}']
+          dest: 'app/compile/img'
+        ]
+    <% } %>
+
     watch:
       options:
         livereload: true
@@ -92,6 +106,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-autoprefixer"
 
   <% if (datauri) { %>grunt.loadNpmTasks "grunt-datauri"<% } %>
+  <% if (grunt_imagemin) { %>grunt.loadNpmTasks "grunt-contrib-imagemin"<% } %>
 
   grunt.registerTask "server", "connect"
   grunt.registerTask "default", "watch"
