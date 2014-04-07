@@ -1,6 +1,6 @@
 {
   "name": "package",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -12,5 +12,6 @@
     "grunt-bowercopy": "~0.9.0",
     "grunt-autoprefixer": "~0.4.0"
     <% if (datauri) { %>, "grunt-datauri": "~0.4.0"<% } %>
+    <% if (grunt_imagemin) { %>, "grunt-contrib-imagemin": "~0.6.1"<% } %>
   }
 }
