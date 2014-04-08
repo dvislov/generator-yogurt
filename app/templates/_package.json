@@ -1,6 +1,6 @@
 {
   "name": "package",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -13,5 +13,6 @@
     "grunt-autoprefixer": "~0.4.0"
     <% if (datauri) { %>, "grunt-datauri": "~0.4.0"<% } %>
     <% if (grunt_imagemin) { %>, "grunt-contrib-imagemin": "~0.6.1"<% } %>
+    <% if (grunt_csso) { %>, "grunt-csso": "~0.6.1"<% } %>
   }
 }

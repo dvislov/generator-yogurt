@@ -72,6 +72,14 @@ module.exports = (grunt) ->
         dest: ["app/sass/base64.sass"]
     <% } %>
 
+    <% if (grunt_csso) { %>csso:
+      compress:
+        options:
+          report: 'min'
+        files:
+          'app/compile/css/application.min.css' : ['app/compile/css/application.css']
+    <% } %>
+
     <% if (grunt_imagemin) { %>imagemin:
       dynamic:
         files: [
@@ -107,6 +115,7 @@ module.exports = (grunt) ->
 
   <% if (datauri) { %>grunt.loadNpmTasks "grunt-datauri"<% } %>
   <% if (grunt_imagemin) { %>grunt.loadNpmTasks "grunt-contrib-imagemin"<% } %>
+  <% if (grunt_csso) { %>grunt.loadNpmTasks "grunt-csso"<% } %>
 
   grunt.registerTask "server", "connect"
   grunt.registerTask "default", "watch"
