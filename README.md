@@ -61,8 +61,11 @@ Then, if you change any of your jade template or sass stylesheet, your browser w
 * Jquery
 * SASS Data URI (base64 images generator)
 * Russian rouble symbol font
+* Imagemin optimization
+* CSSO stylesheets optimization
 
 ## Release history
+* 2014-04-08 **0.0.4** - Grunt CSSO module added.
 * 2014-04-07 **0.0.3** - Grunt imagemin module added.
 * 2014-04-03 **0.0.2** - Russian rouble sign support added.
 * 2014-04-02 **0.0.1** - first release.
