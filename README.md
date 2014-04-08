@@ -65,6 +65,7 @@ Then, if you change any of your jade template or sass stylesheet, your browser w
 * CSSO stylesheets optimization
 
 ## Release history
+* 2014-04-08 **0.0.5** - 'npm publish' makes me crazy. %)
 * 2014-04-08 **0.0.4** - Grunt CSSO module added.
 * 2014-04-07 **0.0.3** - Grunt imagemin module added.
 * 2014-04-03 **0.0.2** - Russian rouble sign support added.
