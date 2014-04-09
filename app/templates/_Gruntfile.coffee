@@ -89,7 +89,7 @@ module.exports = (grunt) ->
           pngquant: true
           cwd: 'app/compile/img'
           src: ['**/*.{png,jpg,gif}']
-          dest: 'app/compile/img/minified'
+          dest: 'app/production/img'
         ]
 
     watch:
@@ -114,6 +114,8 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-csso"
 
   <% if (datauri) { %>grunt.loadNpmTasks "grunt-datauri"<% } %>
+
+  grunt.registerTask "make_production", ["imagemin"]
 
   grunt.registerTask "server", "connect"
   grunt.registerTask "default", "watch"
