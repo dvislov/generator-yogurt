@@ -92,6 +92,11 @@ module.exports = (grunt) ->
           dest: 'app/production/img'
         ]
 
+    concat_css:
+      all:
+        src: 'app/compile/css/**/*.css'
+        dest: 'app/production/css/concat_application.css'
+
     watch:
       options:
         livereload: true
@@ -112,10 +117,11 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-autoprefixer"
   grunt.loadNpmTasks "grunt-contrib-imagemin"
   grunt.loadNpmTasks "grunt-csso"
+  grunt.loadNpmTasks "grunt-concat-css"
 
   <% if (datauri) { %>grunt.loadNpmTasks "grunt-datauri"<% } %>
 
-  grunt.registerTask "make_production", ["imagemin"]
+  grunt.registerTask "make_production", ["concat_css", "imagemin"]
 
   grunt.registerTask "server", "connect"
   grunt.registerTask "default", "watch"
