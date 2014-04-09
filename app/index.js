@@ -67,14 +67,6 @@ YogurtGenerator.prototype.askFor = function askFor() {
       name: 'Ruble sign font',
       value: 'rublefont'
     }
-    ,{
-      name: 'Grunt imagemin optimization task',
-      value: 'grunt_imagemin'
-    }
-    ,{
-      name: 'Grunt CSSO optimization task',
-      value: 'grunt_csso'
-    }
     ]
   }];
 
@@ -86,8 +78,6 @@ YogurtGenerator.prototype.askFor = function askFor() {
     this.jquery = hasFeature('jquery');
     this.datauri = hasFeature('datauri');
     this.rublefont = hasFeature('rublefont');
-    this.grunt_imagemin = hasFeature('grunt_imagemin');
-    this.grunt_csso = hasFeature('grunt_csso');
 
     this.needJs = false;
     if (this.jquery) {this.needJs = true;};

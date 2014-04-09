@@ -72,15 +72,14 @@ module.exports = (grunt) ->
         dest: ["app/sass/base64.sass"]
     <% } %>
 
-    <% if (grunt_csso) { %>csso:
+    csso:
       compress:
         options:
           report: 'min'
         files:
           'app/compile/css/application.min.css' : ['app/compile/css/application.css']
-    <% } %>
 
-    <% if (grunt_imagemin) { %>imagemin:
+    imagemin:
       dynamic:
         files: [
           expand: true
@@ -92,7 +91,6 @@ module.exports = (grunt) ->
           src: ['**/*.{png,jpg,gif}']
           dest: 'app/compile/img/minified'
         ]
-    <% } %>
 
     watch:
       options:
@@ -112,10 +110,10 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-sass"
   grunt.loadNpmTasks "grunt-bowercopy"
   grunt.loadNpmTasks "grunt-autoprefixer"
+  grunt.loadNpmTasks "grunt-contrib-imagemin"
+  grunt.loadNpmTasks "grunt-csso"
 
   <% if (datauri) { %>grunt.loadNpmTasks "grunt-datauri"<% } %>
-  <% if (grunt_imagemin) { %>grunt.loadNpmTasks "grunt-contrib-imagemin"<% } %>
-  <% if (grunt_csso) { %>grunt.loadNpmTasks "grunt-csso"<% } %>
 
   grunt.registerTask "server", "connect"
   grunt.registerTask "default", "watch"
