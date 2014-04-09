@@ -77,7 +77,7 @@ module.exports = (grunt) ->
         options:
           report: 'min'
         files:
-          'app/compile/css/application.min.css' : ['app/compile/css/application.css']
+          'app/production/css/application.css' : ['app/production/css/application.css']
 
     imagemin:
       dynamic:
@@ -95,7 +95,7 @@ module.exports = (grunt) ->
     concat_css:
       all:
         src: 'app/compile/css/**/*.css'
-        dest: 'app/production/css/concat_application.css'
+        dest: 'app/production/css/application.css'
 
     watch:
       options:
@@ -121,7 +121,7 @@ module.exports = (grunt) ->
 
   <% if (datauri) { %>grunt.loadNpmTasks "grunt-datauri"<% } %>
 
-  grunt.registerTask "make_production", ["concat_css", "imagemin"]
+  grunt.registerTask "make_production", ["concat_css", "csso", "imagemin"]
 
   grunt.registerTask "server", "connect"
   grunt.registerTask "default", "watch"
