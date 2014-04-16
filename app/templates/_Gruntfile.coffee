@@ -102,11 +102,11 @@ module.exports = (grunt) ->
         livereload: true
 
       templates:
-        files: ["jade/*.jade"]
+        files: ["app/jade/*.jade"]
         tasks: ["jade"]
 
       css:
-        files: "sass/*.sass"
+        files: "app/sass/*.sass"
         tasks: ["sass", "autoprefixer"]
 
   grunt.loadNpmTasks "grunt-contrib-watch"
