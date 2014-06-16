@@ -63,8 +63,11 @@ Then, if you change any of your jade template or sass stylesheet, your browser w
 * Russian rouble symbol font
 * Imagemin optimization
 * CSSO stylesheets optimization
+* CSS concatination
+* Sticky footer option
 
 ## Release history
+* 2014-06-16 **0.0.6** - Remove optimization tasks from options, jade templates refactored, sticky footer option added.
 * 2014-04-08 **0.0.5** - 'npm publish' makes me crazy. %)
 * 2014-04-08 **0.0.4** - Grunt CSSO module added.
 * 2014-04-07 **0.0.3** - Grunt imagemin module added.
