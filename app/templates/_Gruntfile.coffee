@@ -72,15 +72,14 @@ module.exports = (grunt) ->
         dest: ["app/sass/base64.sass"]
     <% } %>
 
-    <% if (grunt_csso) { %>csso:
+    csso:
       compress:
         options:
           report: 'min'
         files:
-          'app/compile/css/application.min.css' : ['app/compile/css/application.css']
-    <% } %>
+          'app/production/css/application.css' : ['app/production/css/application.css']
 
-    <% if (grunt_imagemin) { %>imagemin:
+    imagemin:
       dynamic:
         files: [
           expand: true
@@ -90,20 +89,24 @@ module.exports = (grunt) ->
           pngquant: true
           cwd: 'app/compile/img'
           src: ['**/*.{png,jpg,gif}']
-          dest: 'app/compile/img/minified'
+          dest: 'app/production/img'
         ]
-    <% } %>
+
+    concat_css:
+      all:
+        src: 'app/compile/css/**/*.css'
+        dest: 'app/production/css/application.css'
 
     watch:
       options:
         livereload: true
 
       templates:
-        files: ["jade/*.jade"]
+        files: ["app/jade/*.jade"]
         tasks: ["jade"]
 
       css:
-        files: "sass/*.sass"
+        files: "app/sass/*.sass"
         tasks: ["sass", "autoprefixer"]
 
   grunt.loadNpmTasks "grunt-contrib-watch"
@@ -112,10 +115,13 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-sass"
   grunt.loadNpmTasks "grunt-bowercopy"
   grunt.loadNpmTasks "grunt-autoprefixer"
+  grunt.loadNpmTasks "grunt-contrib-imagemin"
+  grunt.loadNpmTasks "grunt-csso"
+  grunt.loadNpmTasks "grunt-concat-css"
 
   <% if (datauri) { %>grunt.loadNpmTasks "grunt-datauri"<% } %>
-  <% if (grunt_imagemin) { %>grunt.loadNpmTasks "grunt-contrib-imagemin"<% } %>
-  <% if (grunt_csso) { %>grunt.loadNpmTasks "grunt-csso"<% } %>
+
+  grunt.registerTask "make_production", ["concat_css", "csso", "imagemin"]
 
   grunt.registerTask "server", "connect"
   grunt.registerTask "default", "watch"

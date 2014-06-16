@@ -68,12 +68,8 @@ YogurtGenerator.prototype.askFor = function askFor() {
       value: 'rublefont'
     }
     ,{
-      name: 'Grunt imagemin optimization task',
-      value: 'grunt_imagemin'
-    }
-    ,{
-      name: 'Grunt CSSO optimization task',
-      value: 'grunt_csso'
+      name: 'Sticky footer',
+      value: 'stickyfooter'
     }
     ]
   }];
@@ -86,8 +82,7 @@ YogurtGenerator.prototype.askFor = function askFor() {
     this.jquery = hasFeature('jquery');
     this.datauri = hasFeature('datauri');
     this.rublefont = hasFeature('rublefont');
-    this.grunt_imagemin = hasFeature('grunt_imagemin');
-    this.grunt_csso = hasFeature('grunt_csso');
+    this.stickyfooter = hasFeature('stickyfooter');
 
     this.needJs = false;
     if (this.jquery) {this.needJs = true;};

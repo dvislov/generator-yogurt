@@ -1,13 +1,19 @@
-include _shared/_header
+!!!
+html
+  head
+    include _shared/_head
+  body
+    .main
+      include _shared/_header
+      .content
+        h1 Index page
 
-h1 Index page
+        <% if (datauri) {%>.icon-geo<% } %>
 
-.icon-geo
+        <% if (rublefont) { %>h2 Ruble sign
+        .ruble 99 Р
+        .ruble: b 99 Р
+        .ruble: i 99 Р
+        .ruble: b: i 99 Р<% } %>
 
-<% if (rublefont) { %>h2 Ruble sign
-.ruble 99 Р
-.ruble: b 99 Р
-.ruble: i 99 Р
-.ruble: b: i 99 Р<% } %>
-
-include _shared/_footer
+    include _shared/_footer
