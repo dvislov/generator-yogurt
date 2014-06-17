@@ -70,6 +70,9 @@ YogurtGenerator.prototype.askFor = function askFor() {
     ,{
       name: 'Sticky footer',
       value: 'stickyfooter'
+    },{
+      name: 'Twitter Bootstrap 3 Grid',
+      value: 'twbootstrapgrid'
     }
     ]
   }];
@@ -83,6 +86,7 @@ YogurtGenerator.prototype.askFor = function askFor() {
     this.datauri = hasFeature('datauri');
     this.rublefont = hasFeature('rublefont');
     this.stickyfooter = hasFeature('stickyfooter');
+    this.twbootstrapgrid = hasFeature('twbootstrapgrid');
 
     this.needJs = false;
     if (this.jquery) {this.needJs = true;};
@@ -116,6 +120,10 @@ YogurtGenerator.prototype.app = function app() {
 
   if (this.rublefont) {
     this.directory('fonts', 'app/compile/fonts', true);
+  }
+
+  if (this.twbootstrapgrid) {
+    this.copy('css/bootstrap-grid.css', 'app/compile/css/bootstrap-grid.css');
   }
 
   this.copy('_package.json', 'package.json');
