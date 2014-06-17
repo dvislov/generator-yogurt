@@ -67,6 +67,7 @@ Then, if you change any of your jade template or sass stylesheet, your browser w
 * Sticky footer option
 
 ## Release history
+* 2014-06-17 **0.0.7** - Twitter Bootstrap 3 Grid CSS option added.
 * 2014-06-16 **0.0.6** - Remove optimization tasks from options, jade templates refactored, sticky footer option added.
 * 2014-04-08 **0.0.5** - 'npm publish' makes me crazy. %)
 * 2014-04-08 **0.0.4** - Grunt CSSO module added.
