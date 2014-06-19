@@ -56,17 +56,21 @@ Then, if you change any of your jade template or sass stylesheet, your browser w
 * Jade (with partials)
 * SASS
 
+### Production mode
+* Imagemin optimization
+* CSSO stylesheets optimization
+* CSS concatination
+
 ### Optionally
 * Normalize.css or Eric Meyer reset.css
 * Jquery
 * SASS Data URI (base64 images generator)
 * Russian rouble symbol font
-* Imagemin optimization
-* CSSO stylesheets optimization
-* CSS concatination
-* Sticky footer option
+* Sticky footer
+* Twitter Bootstrap 3 Grid
 
 ## Release history
+* 2014-06-19 **0.0.8** - .gitignore for node modules and SASS cache added.
 * 2014-06-17 **0.0.7** - Twitter Bootstrap 3 Grid CSS option added.
 * 2014-06-16 **0.0.6** - Remove optimization tasks from options, jade templates refactored, sticky footer option added.
 * 2014-04-08 **0.0.5** - 'npm publish' makes me crazy. %)
