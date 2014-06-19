@@ -129,6 +129,7 @@ YogurtGenerator.prototype.app = function app() {
   this.copy('_package.json', 'package.json');
   this.copy('_Gruntfile.coffee', 'Gruntfile.coffee');
   this.copy('_bower.json', 'bower.json');
+  this.copy('.gitignore', '.gitignore');
 };
 
 YogurtGenerator.prototype.projectfiles = function projectfiles() {
