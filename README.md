@@ -55,6 +55,7 @@ Then, if you change any of your jade template or sass stylesheet, your browser w
 ## What's inside?
 * Jade (with partials)
 * SASS
+* CoffeeScript
 
 ### Production mode
 * Imagemin optimization
@@ -70,6 +71,7 @@ Then, if you change any of your jade template or sass stylesheet, your browser w
 * Twitter Bootstrap 3 Grid
 
 ## Release history
+* 2014-06-20 **0.0.9** - CoffeeScript single file support added.
 * 2014-06-19 **0.0.8** - .gitignore for node modules and SASS cache added.
 * 2014-06-17 **0.0.7** - Twitter Bootstrap 3 Grid CSS option added.
 * 2014-06-16 **0.0.6** - Remove optimization tasks from options, jade templates refactored, sticky footer option added.
