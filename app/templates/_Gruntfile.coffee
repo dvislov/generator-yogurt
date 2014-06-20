@@ -39,6 +39,11 @@ module.exports = (grunt) ->
         files:
           "app/compile/css/application.css": "app/sass/application.sass"
 
+    coffee:
+      compile:
+        files:
+          "app/compile/js/application.js": "app/coffee/application.js.coffee"
+
     autoprefixer:
       single_file:
         options:
@@ -109,10 +114,15 @@ module.exports = (grunt) ->
         files: "app/sass/*.sass"
         tasks: ["sass", "autoprefixer"]
 
+      coffee:
+        files: "app/coffee/*.coffee"
+        tasks: ["coffee"]
+
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-connect"
   grunt.loadNpmTasks "grunt-contrib-jade"
   grunt.loadNpmTasks "grunt-contrib-sass"
+  grunt.loadNpmTasks "grunt-contrib-coffee"
   grunt.loadNpmTasks "grunt-bowercopy"
   grunt.loadNpmTasks "grunt-autoprefixer"
   grunt.loadNpmTasks "grunt-contrib-imagemin"

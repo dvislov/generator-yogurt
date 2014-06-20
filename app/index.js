@@ -19,6 +19,7 @@ var YogurtGenerator = module.exports = function YogurtGenerator(args, options, c
 
         grunt_post_tasks.push('jade');
         grunt_post_tasks.push('sass');
+        grunt_post_tasks.push('coffee');
         grunt_post_tasks.push('autoprefixer');
         grunt_post_tasks.push('bowercopy');
 
@@ -100,6 +101,9 @@ YogurtGenerator.prototype.app = function app() {
 
   // Jade templates
   this.directory('jade', 'app/jade', true);
+
+  // Coffee script example
+  this.directory('coffee', 'app/coffee', true);
 
   // Yeoman jade templating
   this.template('jade/_shared/_header.jade', 'app/jade/_shared/_header.jade');
