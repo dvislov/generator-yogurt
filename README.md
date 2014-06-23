@@ -60,7 +60,8 @@ Then, if you change any of your jade template or sass stylesheet, your browser w
 ### Production mode
 * Imagemin optimization
 * CSSO stylesheets optimization
-* CSS concatination
+* CSS concatenation
+* JS concatenation
 
 ### Optionally
 * Normalize.css or Eric Meyer reset.css
@@ -71,6 +72,7 @@ Then, if you change any of your jade template or sass stylesheet, your browser w
 * Twitter Bootstrap 3 Grid
 
 ## Release history
+* 2014-06-23 **0.0.10** - JS concatenation added at production mode. Change concat-css grunt module to contrib-concat.
 * 2014-06-20 **0.0.9** - CoffeeScript single file support added.
 * 2014-06-19 **0.0.8** - .gitignore for node modules and SASS cache added.
 * 2014-06-17 **0.0.7** - Twitter Bootstrap 3 Grid CSS option added.
