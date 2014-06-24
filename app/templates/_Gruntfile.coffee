@@ -105,6 +105,15 @@ module.exports = (grunt) ->
         src: 'app/compile/css/**/*.css'
         dest: 'app/production/css/application.css'
 
+    uglify:
+      my_target:
+        files: [
+            expand: true
+            cwd: 'app/production/js'
+            src: '**/*.js'
+            dest: 'app/production/js'
+        ]
+
     watch:
       options:
         livereload: true
@@ -131,10 +140,11 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-imagemin"
   grunt.loadNpmTasks "grunt-csso"
   grunt.loadNpmTasks "grunt-contrib-concat"
+  grunt.loadNpmTasks "grunt-contrib-uglify"
 
   <% if (datauri) { %>grunt.loadNpmTasks "grunt-datauri"<% } %>
 
-  grunt.registerTask "make_production", ["concat_css", "csso", "imagemin", "concat"]
+  grunt.registerTask "make_production", ["imagemin", "concat", "csso", "uglify"]
 
   grunt.registerTask "server", "connect"
   grunt.registerTask "default", "watch"
