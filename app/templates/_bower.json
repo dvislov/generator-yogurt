@@ -1,6 +1,6 @@
 {
   "name": "package",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "dependencies": {
     <% if (cssreset == 'meyer') { %>"reset-css": "~2.0.20110126"<% } %>
     <% if (cssreset == 'normalize') { %>"normalize-css": "~3.0.0"<% } %>

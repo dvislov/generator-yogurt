@@ -72,6 +72,7 @@ Then, if you change any of your jade template or sass stylesheet, your browser w
 * Twitter Bootstrap 3 Grid
 
 ## Release history
+* 2014-09-12 **0.0.12** - Jade compile task fixed. Compile pages when partials changed.
 * 2014-06-24 **0.0.11** - JS minify added at production mode.
 * 2014-06-23 **0.0.10** - JS concatenation added at production mode. Change concat-css grunt module to contrib-concat.
 * 2014-06-20 **0.0.9** - CoffeeScript single file support added.
