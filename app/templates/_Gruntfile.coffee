@@ -119,7 +119,7 @@ module.exports = (grunt) ->
         livereload: true
 
       templates:
-        files: ["app/jade/*.jade"]
+        files: ["app/jade/*.jade", "app/jade/_shared/*.jade"]
         tasks: ["jade"]
 
       css:
